@@ -1,0 +1,785 @@
+.light-theme {
+    --bg-color: #fff;
+    --text-color: #000;
+    /* --navbar-bg: #ffffff; */
+    /* --navbar-text-color: #000; */
+    /* --footer-bg: #ffffff00; */
+    /* --footer-text-color: #000; */
+    --image-border-left: linear-gradient(to top, var(--theme-color), #ffffff);
+    --image-border-bottom: linear-gradient(
+        to right,
+        var(--theme-color),
+        #ffffff
+    );
+
+
+}
+
+:root {
+    --bg-color: #000;
+    --text-color: #fff;
+    /* --navbar-bg: #040404; */
+    /* --navbar-text-color: #fff; */
+    /* --footer-bg: #00000000; */
+    /* --footer-text-color: #fff; */
+    --image-border-left: linear-gradient(to top, var(--theme-color), #000);
+    --image-border-bottom: linear-gradient(to right, var(--theme-color), #000);
+}
+
+.bg {
+    background-color: var(--bg-color);
+}
+.text {
+    color: var(--text-color);
+}
+
+.hero-section {
+    min-height: 80vh;
+}
+.modal-content {
+    border-radius: 0% !important;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+
+}
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+
+.bg-primary {
+    background-color: var(--theme-color) !important;
+}
+#welcome-message {
+    background-color: var(--theme-color);
+    color: var(--text-color);
+    padding: 10px;
+    transition: ease-in 0.5s;
+}
+.custom-close {
+    opacity: 1;
+    background-color: transparent;
+    border: none;
+}
+
+.about-section {
+    color: var(--text-color);
+}
+
+.navbar {
+    background-color: var(--bg-color);
+    padding: 0.75rem 1rem;
+    transition: background-color 0.5s ease-in-out;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid var(--theme-color);
+    z-index: 2;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    position: relative;
+    padding: 0.5rem 0;
+    overflow: hidden;
+}
+
+.navbar-brand::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--theme-color);
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand::after {
+    bottom: 0;
+    transform: scaleX(0);
+}
+
+.navbar-brand:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar-brand:hover {
+    color: var(--theme-color);
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 0.75rem 1rem;
+    position: relative;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.navbar-toggler {
+    border: none;
+    color: var(--theme-color);
+}
+
+.navbar-toggler {
+    transition: transform 0.3s ease-in-out;
+    box-shadow: none;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--theme-color);
+    border-bottom: 3px solid var(--theme-color);
+}
+
+.navbar-nav .nav-link:hover {
+    transform: scale(1);
+    border-bottom: 3px solid var(--theme-color);
+}
+
+.animated-border {
+    position: relative;
+    width: 200px;
+}
+
+.animated-border::before,
+.animated-border::after {
+    content: "";
+    position: absolute;
+    transition: all 0.5s ease;
+}
+
+.animated-border::before {
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 5px;
+    background: linear-gradient(to top, var(--theme-color), #000);
+    background: var(--image-border-left);
+    animation: border-left 5s infinite alternate;
+}
+
+.animated-border::after {
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(to right, var(--theme-color), #000);
+    background: var(--image-border-bottom);
+    bottom: 0;
+    animation: border-bottom 5s infinite alternate;
+}
+
+@keyframes border-left {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+@keyframes border-bottom {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.contact-section {
+    padding: 3rem 0;
+}
+
+.form-control {
+    background-color: var(--bg-color);
+    border: 1px solid var(--theme-color);
+    color: var(--text-color) !important;
+    transition: border-color 1s ease, box-shadow 1s ease;
+}
+
+.form-control::placeholder {
+    color: var(--theme-color);
+    opacity: 1;
+}
+
+.input-group-text {
+    padding: 1rem;
+    background-color: var(--bg-color);
+    border: 1px solid var(--theme-color);
+    color: var(--theme-color) !important;
+}
+
+.input-group .form-control:focus {
+    border-color: var(--theme-color) !important;
+    background-color: var(--bg-color) !important;
+}
+.input-group {
+    margin: 1.5rem 0 0 0;
+}
+
+/* -------------------bg animation css ------------------------------------------ */
+/* .floating-logos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+} */
+
+/* .bg-logo {
+    width: 100px;
+    opacity: 0;
+    position: absolute;
+    animation: fly 120s ease-in-out infinite;
+} */
+
+/* Animation for floating effect */
+/* @keyframes fly {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.1;
+    }
+    20% {
+        transform: translate(calc(-30vw), -20vh);
+    }
+    40% {
+        transform: translate(calc(30vw), 20vh);
+    }
+    60% {
+        transform: translate(calc(-20vw), -30vh);
+    }
+    80% {
+        transform: translate(calc(20vw), 10vh);
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.1;
+    }
+}
+
+.bg-logo:nth-child(1) {
+    top: 30%;
+    left: 50%;
+    animation-delay: 0s;
+}
+.bg-logo:nth-child(2) {
+    top: 50%;
+    left: 10%;
+    animation-delay: 2s;
+}
+.bg-logo:nth-child(3) {
+    top: 40%;
+    left: 25%;
+    animation-delay: 4s;
+}
+.bg-logo:nth-child(4) {
+    top: 70%;
+    left: 60%;
+    animation-delay: 6s;
+}
+.bg-logo:nth-child(5) {
+    top: 30%;
+    left: 80%;
+    animation-delay: 8s;
+} */
+/* Ribbon Base Styles */
+.ribbon {
+    position: absolute;
+    background: linear-gradient(135deg, var(--theme-color), rgba(0, 0, 0, 0));
+    opacity: 0.9;
+    transform: skewX(-30deg);
+    z-index: -1;
+    border: 1px solid var(--theme-color);
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Individual Ribbon Styles */
+.ribbon-1 {
+    top: 20%;
+    left: -10%;
+    width: 85%;
+    height: 40px;
+    animation-name: slide-left;
+}
+
+/* .ribbon-2 {
+    top: 25%;
+    right: -65%;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0), var(--theme-color));
+    animation-name: slide-right;
+} */
+
+.ribbon-3 {
+    bottom: 10%;
+    left: -5%;
+    width: 50%;
+    height: 40px;
+    animation-name: slide-left;
+}
+
+/* Slide-in Animations */
+@keyframes slide-left {
+    0% {
+        transform: translateX(-100%) skewX(-30deg);
+    }
+    100% {
+        transform: translateX(0) skewX(-30deg);
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(100%) skewX(-30deg);
+    }
+    100% {
+        transform: translateX(0) skewX(-30deg);
+    }
+}
+
+/* -------------------bg animation css finish------------------------------------------ */
+
+/* ------------------footer social icon  start-------------------------------------------  */
+.social-icons a {
+    font-size: 1.5rem;
+    color: var(--theme-color);
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: var(--text-color);
+    transform: scale(1.5);
+}
+
+footer {
+    border-top: 1px solid var(--theme-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 2rem 0;
+}
+
+footer .quick-link {
+    color: var(--text-color);
+    display: block;
+    padding: 5px 0;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+footer .quick-link:hover {
+    color: var(--theme-color);
+    transform: translateX(5px);
+}
+
+/* ------------------footer  End of Social Icons Styling ------------------ */
+
+/* ------------------chat button  start-------------------------------------------  */
+.chat-button {
+    position: fixed;
+    background: var(--theme-color);
+    color: var(--text-color);
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ------------------chat button finish-------------------------------------------  */
+.text-color-primary {
+    color: var(--theme-color);
+}
+
+.button-52 {
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 50px 20px 13px;
+    outline: 0;
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    color: var(--text-color);
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-52:after {
+    content: "";
+    background-color: var(--theme-color);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+.button-52:hover:after {
+    top: 0px;
+    left: 0px;
+}
+
+@media (min-width: 768px) {
+    .button-52 {
+        padding: 13px 50px 13px;
+    }
+}
+@media (max-width: 768px) {
+    .button-52 {
+        padding: 13px 50px 13px;
+    }
+}
+
+/* timeline css */
+.timeline {
+    position: relative;
+    margin-top: 20px;
+}
+
+.timeline-item {
+    border-left: 3px solid var(--theme-color);
+    padding-left: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--theme-color);
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+    top: 0;
+}
+
+.timeline-title {
+    font-weight: bold;
+    color: var(--theme-color);
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.timeline-description {
+    margin-top: 5px;
+}
+
+/* ------------------blog page css start-------------------------------------------  */
+
+.sidebar-container {
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 90vh;
+    min-height: auto;
+    overflow-y: auto;
+    position: sticky;
+    top: 20px;
+    background-color: var(--theme-color) !important;
+}
+.sidebar {
+    margin-top: inherit;
+}
+
+.category-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-item {
+    margin-bottom: 15px;
+}
+
+.category-link {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.category-link:hover {
+    background-color: var(--bg-color);
+    color: var(--theme-color);
+}
+
+.category-link.active {
+    background-color: var(--bg-color);
+    color: var(--theme-color);
+}
+
+@media (max-width: 768px) {
+    .sidebar-container {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1050;
+        background-color: var(--theme-color);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .sidebar-container.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .sidebar {
+        padding: 10px;
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+
+    #toggleSidebar {
+        display: block;
+    }
+}
+
+#blogSuggestions {
+    position: absolute;
+    z-index: 1000;
+    max-height: 30vh;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#blogSuggestions li:hover {
+    background-color: var(--theme-color);
+    background-color: rgb(245, 232, 232);
+}
+/* ------------------blog page css end-------------------------------------------  */
+
+/* ------------------like button css-------------------------------------------  */
+
+/* Like Button Styling */
+.like-btn {
+    font-size: 1.6rem;
+    color: #ffc107;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.like-btn:hover {
+    transform: scale(1.3) rotate(15deg);
+    /* Rotate and scale on hover */
+    color: #f4b400;
+    /* Slightly darker gold on hover */
+}
+
+.like-btn.clicked {
+    animation: pulse 0.6s ease-in-out, rotateEffect 0.6s ease-in-out;
+    /* Added rotation to click animation */
+    color: #ffcc00;
+    /* Bright gold on click */
+}
+
+/* Pulse Animation for Click Effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Rotate Effect on Click */
+@keyframes rotateEffect {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Like Section Container */
+.like-section {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.8rem;
+    background-color: #f1f8ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.like-section:hover {
+    background-color: #e3f2fd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Like Count Styling */
+.ml-2 {
+    margin-left: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #495057;
+}
+.blog-title-like {
+    padding: 1rem;
+    border-left: 5px solid var(--theme-color);
+    background-color: #535b6a1e;
+}
+
+/* ------------------like button css end-------------------------------------------  */
+
+/* ------------------btn-danger css-------------------------------------------  */
+
+.btn-outline-primary {
+    color: var(--theme-color) !important;
+    border: 1px solid var(--theme-color) !important;
+    border-radius: 0px !important;
+}
+
+.btn-outline-primary:hover {
+    color: var(--text-color) !important;
+    background-color: var(--theme-color) !important;
+    border: 1px solid rgba(0, 0, 0, 0) !important;
+}
+
+.btn-primary {
+    color: var(--text-color) !important;
+    background-color: var(--theme-color) !important;
+    border: 2px solid var(--theme-color) !important;
+    border-radius: 0px !important;
+}
+.btn-primary:hover {
+    color: var(--text-color) !important;
+    background-color: var(--theme-color) !important;
+    border: 2px solid rgba(0, 0, 0, 0) !important;
+}
+
+.btn-primary:active {
+    border: 2px solid var(--theme-color) !important;
+    background-color: var(--theme-color) !important;
+}
+.btn-outline-primary:active {
+    border: 2px solid var(--theme-color) !important;
+    background-color: var(--theme-color) !important;
+}
+
+/* ------------------btn-danger css end-------------------------------------------  */
+
+/* ------------------skill cards-------------------------------------------  */
+.skill-card {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: 0; /* Sharp corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card .progress {
+    background-color: #f1f1f1;
+}
+
+.skill-card .progress-bar {
+    transition: width 0.4s ease-in-out;
+}
+
+.skill-card:hover .progress-bar {
+    filter: brightness(1.2);
+}
+/* ------------------skill cards end-------------------------------------------  */
+/* ------------------code card start-------------------------------------------  */
+pre code,
+code {
+    font-family: "Courier New", Courier, monospace;
+    color: #ff6f61;
+    font-size: 18px;
+    background-color:transparent;
+    padding: 2px 4px;
+}
+
+pre {
+    background-image: url("https://www.transparenttextures.com/patterns/subtle-carbon.png");
+    background-color: #282c34;
+    border-left: 5px solid var(--theme-color);
+    padding: 15px;
+    color: #abb2bf;
+    overflow-x: auto;
+    margin: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+code {
+    background-color:transparent;
+    color: #e06c75;
+    padding: 2px 4px;
+    font-size: 18px;
+}
+/* ------------------code card end-------------------------------------------  */
+.loginAlertModal {
+    border: 1px solid var(--theme-color);
+}
+
+
+
+
+
