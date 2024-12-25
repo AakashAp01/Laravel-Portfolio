@@ -8,17 +8,10 @@
 
     <!-- Search Suggestions -->
     <ul id="blogSuggestions" class="list-group mt-2 w-50" style="display: none;">
-        @foreach ($blogs as $blog)
-            <li class="list-group-item bg-primary">
-                <a href="{{ route('web.viewBlog', Crypt::encrypt($blog->id)) }}"
-                    class="text text-decoration-none d-flex justify-content-between align-items-center">
-                    <span class="blog-title">{{ $blog->title }}</span>
-                    <i class="bi bi-arrow-right-circle text"></i>
-                </a>
-            </li>
-        @endforeach
+        <!-- Suggestions will be dynamically added here -->
     </ul>
 </div>
+
 @push('scripts')
 <script>
     $(document).ready(function() {
@@ -28,7 +21,6 @@
 
             // Filter blogs based on the search query
             @foreach ($blogs as $blog)
-
                 if ("{{ $blog->title }}".toLowerCase().includes(query.toLowerCase())) {
                     filteredBlogs.push({
                         id: "{{ Crypt::encrypt($blog->id) }}",
@@ -37,22 +29,32 @@
                 }
             @endforeach
 
-            // If there are filtered blogs, show suggestions
-            if (filteredBlogs.length > 0 && query.length > 2) {
-                $('#blogSuggestions').empty().show();
+            // Clear the suggestions list
+            $('#blogSuggestions').empty();
 
+            if (filteredBlogs.length > 0 && query.length > 0) {
+                $('#blogSuggestions').show();
+
+                // Append filtered blogs to the suggestions list
                 filteredBlogs.forEach(function(blog) {
                     $('#blogSuggestions').append(`
                         <li class="list-group-item bg-primary">
-                              <a href="{{ route('web.viewBlog', '') }}/${blog.id}" class="text text-decoration-none d-flex justify-content-between align-items-center">
+                            <a href="{{ route('web.viewBlog', '') }}/${blog.id}" class="text-light text-decoration-none d-flex justify-content-between align-items-center">
                                 <span class="blog-title">${blog.title}</span>
-                                <i class="bi bi-arrow-right-circle text"></i>
+                                <i class="bi bi-arrow-right-circle text text-light"></i>
                             </a>
                         </li>
                     `);
                 });
+            } else if (query.length > 0) {
+                // Show "Not Found" message if no blogs match the query
+                $('#blogSuggestions').show().append(`
+                     <li class="list-group-item  text-light bg-primary">
+                        No blogs found.
+                    </li>
+                `);
             } else {
-                $('#blogSuggestions').empty().hide();
+                $('#blogSuggestions').hide();
             }
         });
 

@@ -15,11 +15,10 @@
     <!-- Ribbon Elements -->
 
     <!-- Hero Section -->
-    <section class="hero-section text-center d-flex align-items-center justify-content-center"
+    <section class="hero-section text-center d-flex align-items-center justify-content-center position-relative"
         style=" overflow: hidden;">
         <div class="ribbon ribbon-1"></div>
-        {{-- <div class="ribbon ribbon-2"></div> --}}
-        <div class="ribbon ribbon-3"></div>
+        <div class="ribbon ribbon-2"></div>
         <div class="container text-center" data-aos="zoom-in-down">
             <h1 class="display-5">Hi, I'm <span class="text-color-primary" id="myname"></span></h1>
             <p class="lead">A Passionate Laravel, CodeIgniter, and PHP Developer.</p>

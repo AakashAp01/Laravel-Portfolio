@@ -27,7 +27,7 @@ class AuthController extends Controller
 
             $user = User::find(Auth::user()->id);
             $role = Role::firstOrCreate(['name' => 'admin']);
-            // if($user->hasRole('admin')) {
+            
             if($user->assignRole($role)) {
 
                 return redirect()->route('admin.dashboard')->with('success', 'Login successful!');

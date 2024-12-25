@@ -21,9 +21,9 @@ $(document).ready(function () {
         $("#theme-toggle i")
             .removeClass("bi-sun-fill")
             .addClass("bi-moon-fill");
-        $("#theme-toggle").attr("title", "Switch to Light Theme");
-    } else {
         $("#theme-toggle").attr("title", "Switch to Dark Theme");
+    } else {
+        $("#theme-toggle").attr("title", "Switch to Light Theme");
     }
 
     $("#theme-toggle").on("click", function () {

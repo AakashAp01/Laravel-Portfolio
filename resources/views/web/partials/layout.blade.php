@@ -55,14 +55,8 @@
         </div>
     </div>
     <!-- Spinner End -->
-
     @include('web.partials.header')
-
-
     @yield('content')
-
-
-
     @include('web.partials.footer')
     <!-- Floating Chat Button -->
     @if (Auth::check())
@@ -76,8 +70,6 @@
             <i class="bi bi-chat-dots"></i>
         </a>
     @endif
-
-
     <!-- Login alert Modal -->
     <div class="modal fade" id="loginAlertModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog loginAlertModal">
@@ -104,8 +96,6 @@
 
     {{-- toast alert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
     <script src="{{ asset('web/script.js') }}"></script>
     <script src="{{ asset('common/common.js') }}"></script>
     @stack('scripts')
