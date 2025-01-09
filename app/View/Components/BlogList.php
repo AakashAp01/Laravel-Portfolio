@@ -11,6 +11,7 @@ class BlogList extends Component
     public $latestBlogs;
     public $olderBlogs;
 
+    
     public function __construct($latestBlogs = null, $olderBlogs = null)
     {
         // Fetch 3 random latest blogs
