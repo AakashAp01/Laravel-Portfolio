@@ -21,7 +21,7 @@
                                     placeholder="Username" wire:model="name">
                             </div>
                             @error('name')
-                            <div class="text-end" >
+                            <div class="text-end">
                                 <small class="text-danger">{{ $message }}</small>
                             </div>
                             @enderror
@@ -35,7 +35,7 @@
                                 placeholder="Email Address" wire:model="email">
                         </div>
                         @error('email')
-                        <div class="text-end" >
+                        <div class="text-end">
                             <small class="text-danger">{{ $message }}</small>
                         </div>
                         @enderror
@@ -48,15 +48,18 @@
                                 placeholder="Password" wire:model="password">
                         </div>
                         @error('password')
-                            <div class="text-end" >
+                            <div class="text-end">
                                 <small class="text-danger">{{ $message }}</small>
                             </div>
                         @enderror
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100">
-                        <span wire:loading.remove>{{ $isLogin ? 'Login' : 'Register' }}</span>
-                        <span wire:loading>
+                    <button type="submit" class="btn btn-primary w-100"
+                        wire:target="{{ $isLogin ? 'login' : 'register' }}" wire:loading.attr="disabled">
+                        <span wire:loading.remove wire:target="{{ $isLogin ? 'login' : 'register' }}">
+                            {{ $isLogin ? 'Login' : 'Register' }}
+                        </span>
+                        <span wire:loading wire:target="{{ $isLogin ? 'login' : 'register' }}">
                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                             Processing...
                         </span>
